@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --steps: 41;
+  --typing-duration: 5s;
+  --caret-blink-duration: 0.5s;
+}
+@keyframes typing {
+  to {
+    max-width: calc(var(--steps) * 1ch);
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+#typewriter-text {
+  display: inline-block;
+  max-width: 0;
+  font: bold 120% monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid  ; 
+  animation: typing var(--typing-duration) steps(var(--steps)) forwards, caret var(--caret-blink-duration) steps(1) infinite;
+}
+
 
 @layer base {
   :root {

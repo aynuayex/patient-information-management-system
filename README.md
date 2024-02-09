@@ -76,4 +76,4 @@ after some operation on the website you can go a head and execute the database *
 
 # License
 
-This project is licensed under the [License Name] 
+This project is licensed under the [MIT] license name.

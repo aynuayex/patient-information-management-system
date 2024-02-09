@@ -13,15 +13,12 @@ datasource db {
 model Patient {
   id            String        @id @default(uuid())
   fullName      String
-  // imageUrl      String      // Path to the photo/image of the patient (optional)
-  sex           String        // Gender of the patient
+  sex           String        
   age           String
-  phone         String        // Phone number of the patient
+  phone         String        
   email         String
-  // visitTime     String        // Visit time (e.g., "9:00 AM - 10:00 AM")
-  doctor        String        // Name of the doctor attending the patient
-  injury        String        // Description of the injury/condition (optional)
-  //actions       String?        Actions related to patient records (e.g., "Edited by User X on Date Y")
+  doctor        String        
+  injury        String        
   dateOfVisit   DateTime      @default(now())
 }
 

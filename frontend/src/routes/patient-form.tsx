@@ -236,9 +236,14 @@ const PatientForm: React.FC = () => {
               )}
             />
           </div>
-          <Button type="submit" disabled={loading}>
-            {action}
-          </Button>
+          <div className="flex space-x-8">
+            <Button onClick={() => navigate("/dashboard")} disabled={loading}>
+              Cancel
+            </Button>
+            <Button type="submit" disabled={loading}>
+              {action}
+            </Button>
+          </div>
         </form>
       </Form>
     </>

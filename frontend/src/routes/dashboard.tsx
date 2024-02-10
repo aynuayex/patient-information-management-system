@@ -95,7 +95,7 @@ const columns: ColumnDef<PatientColumn>[] = [
   },
   {
     accessorKey: "dateOfVisit",
-    header: "Date",
+    header: "Visit Date",
   },
   {
     id: "actions",

@@ -20,8 +20,22 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="sign-in" element={<SignIn />} />
-        <Route path="sign-up" element={<SignUp />} />
+        <Route
+          path="sign-in"
+          element={
+            <div className="flex justify-center">
+              <SignIn />
+            </div>
+          }
+        />
+        <Route
+          path="sign-up"
+          element={
+            <div className="flex justify-center">
+              <SignUp />
+            </div>
+          }
+        />
         <Route path="dashboard" element={<DashboardLayout />}>
           <Route
             index
@@ -57,4 +71,3 @@ function App() {
 }
 
 export default App;
-

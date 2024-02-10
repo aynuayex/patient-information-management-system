@@ -1,7 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import {
   ClerkProvider,
-  SignInButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -12,6 +11,7 @@ import MainNav from "@/components/main-nav";
 import ThemeSwitch from "@/components/theme-switch";
 import ContactPage from "@/components/contact";
 import Footer from "@/components/footer";
+import { Button } from "@/components/ui/button";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -45,7 +45,7 @@ export default function RootLayout() {
             </SignedIn>
 
             <SignedOut>
-              <SignInButton />
+              <Button onClick={() => navigate('/sign-in')}>Sign in</Button>
             </SignedOut>
           </div>
         </div>

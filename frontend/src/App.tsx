@@ -54,6 +54,7 @@ function App() {
               const response = await axios.get(
                 `http://localhost:3000/api/patients/${params.id}`
               );
+              // console.log(response.data);
               return response.data;
             }}
           />

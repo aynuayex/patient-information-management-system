@@ -1,0 +1,44 @@
+# file variable
+@baseUrl = http://localhost:3000/api/patients
+
+# request variable
+# @name getUsers
+{{baseUrl}}
+
+###
+
+GET {{baseUrl}}/{{getUsers.response.body.$.[1].id}}
+
+### 
+
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+    "fullName": "helen bedlu belachew",
+    "sex": "M",
+    "age": "56",
+    "phone": "0902503407",
+    "email": "haha@example.com",
+    "doctor": "Dr.obsa",
+    "injury": "broken bone"
+}
+
+###
+
+PATCH {{baseUrl}}/{{getUsers.response.body.$.[1].id}}
+Content-Type: application/json
+
+{
+    "fullName": "helen bedlu belachew",
+    "sex": "F",
+    "age": "60",
+    "phone": "0902503407",
+    "email": "haha@example.com",
+    "doctor": "Dr.obsa",
+    "injury": "broken bone"
+}
+
+###
+
+DELETE {{baseUrl}}/{{getUsers.response.body.$.[1].id}}

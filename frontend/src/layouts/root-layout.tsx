@@ -1,6 +1,8 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import {
   ClerkProvider,
+  SignInButton,
+  SignOutButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -41,11 +43,13 @@ export default function RootLayout() {
             <ThemeSwitch />
 
             <SignedIn>
+              {/* <SignOutButton signOutCallback={() => navigate('/')} /> */}
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
 
             <SignedOut>
-              <Button onClick={() => navigate('/sign-in')}>Sign in</Button>
+              {/* <SignInButton /> */}
+              <Button onClick={() => navigate("/sign-in")}>Sign in</Button>
             </SignedOut>
           </div>
         </div>

@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
-import { Patient } from "../../../backend/node_modules/@prisma/client";
+// import { Patient } from "../../../backend/node_modules/@prisma/client";
 import Heading from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -22,6 +22,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import AlertModal from "@/components/modals/alert-modal";
+import { PatientColumn } from "./dashboard";
 
 const formSchema = z.object({
   fullName: z.string().min(1),
@@ -37,7 +38,7 @@ type PatientFormValues = z.infer<typeof formSchema>;
 
 const PatientForm: React.FC = () => {
   const navigate = useNavigate();
-  const initialData = useLoaderData() as Patient | null;
+  const initialData = useLoaderData() as PatientColumn | null;
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);

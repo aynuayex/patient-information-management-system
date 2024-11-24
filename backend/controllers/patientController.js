@@ -22,6 +22,7 @@ const getPatients =  async (req,res) => {
       const patients = await prisma.patient.findMany();
       res.status(200).json(patients);
     } catch (error) {
+      // console.log(error);
       res.status(400).json({"msg": "error"});  
     }
   }

@@ -21,7 +21,7 @@ import { Separator } from "@/components/ui/separator";
 import { DataTable } from "@/components/ui/data-table";
 import { format } from "date-fns";
 
-type PatientColumn = {
+export type PatientColumn = {
   id: string;
   fullName: string;
   age: string;
@@ -34,8 +34,16 @@ type PatientColumn = {
 };
 
 export const patientsDataLoader = async () => {
-  const response = await axios.get("http://localhost:3000/api/patients");
-    return response.data.map((item: PatientColumn) => ({...item, dateOfVisit: format(item.dateOfVisit, "MMMM do, yyyy (h:mm a)")}));
+  try {
+    const response = await axios.get("http://localhost:3000/api/patients");
+    return response.data.map((item: PatientColumn) => ({
+      ...item,
+      dateOfVisit: format(item.dateOfVisit, "MMMM do, yyyy (h:mm a)"),
+    }));
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
 };
 
 const DashboardPage: React.FC = () => {

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "rtf-to-html": "nodemon test.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "prisma": "^5.9.1"
   },
   "dependencies": {
+    "@iarna/rtf-to-html": "^1.1.0",
     "@prisma/client": "^5.9.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",

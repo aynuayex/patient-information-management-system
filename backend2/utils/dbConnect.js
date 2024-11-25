@@ -3,8 +3,8 @@ const sql = require("mssql");
 
 // Database configuration
 const config = {
-  user: "ayex",
-  password: "incorrect",
+  user: "user",
+  password: "pass",
   server: "localhost",
   database: "test",
   options: {
